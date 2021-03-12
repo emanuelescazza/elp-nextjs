@@ -1,0 +1,83 @@
+#contattiBox {
+  margin-bottom: 100px;
+}
+
+.contattiHead {
+  font-size: 36px;
+  text-align: center;
+  color: var(--main-color);
+  padding: 50px 0;
+  margin-bottom: 70px;
+}
+
+.contatti {
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  justify-content: space-evenly;
+  column-gap: 50px;
+  row-gap: 70px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.contatti div {
+  display: grid;
+  grid-template-rows: auto;
+  /* justify-items: center; */
+}
+
+.element {
+  display: grid;
+  grid-template-columns: 100px 200px;
+  align-items: center;
+  column-gap: 40px;
+}
+
+.content {
+  justify-self: left;
+}
+
+.content p {
+  padding-bottom: 12px;
+}
+
+.contactIcon {
+  font-size: 48px;
+  margin: auto;
+  margin-bottom: 12px;
+  color: var(--main-color);
+  transition: transform 0.3s;
+}
+
+.contatti div:hover .contactIcon {
+  transform: translateY(-20px);
+}
+
+.contatti div h1 {
+  padding: auto 0;
+  font-family: var(--head-font-family);
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.content :is(p, span) {
+  font-size: 16px;
+}
+.contatti :is(a, a:visited) {
+  text-decoration: none;
+  color: #333;
+}
+
+.contatti :is(a:hover) {
+  color: var(--main-color);
+}
+
+
+@media only screen and (max-width: 768px) {
+  .contatti {
+    grid-template: auto / auto;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+}

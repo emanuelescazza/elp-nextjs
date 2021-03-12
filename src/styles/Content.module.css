@@ -1,0 +1,126 @@
+.content {
+  padding: 70px 0;
+  margin: 0 auto;
+  max-width: 900px;
+  font-size: 20px;
+  line-height: 3.3rem;
+  letter-spacing: 0.1rem;
+  font-weight: 200;
+  text-align: justify;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 80px;
+  font-family: var(--main-font-family);
+} 
+
+.noSplit {
+  display: block;
+}
+
+.title {
+  width: 300px;
+}
+
+.title h1{
+  padding-bottom: 24px;
+  font-family: var(--head-font-family);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--bg-color);
+  text-align: left;
+  line-height: .9em
+}
+
+.title p {
+  color: var(--black);
+  font-family: var(--main-font-family);
+  font-size: 42px;
+  font-weight: 200;
+  margin-bottom: 12px;
+  /* line-height: 3.3rem; */
+  letter-spacing: 0.03rem;
+}
+
+.image {
+  /* margin-top: 25px; */
+  margin: 0 auto;
+  
+}
+
+.circle {
+  border-radius:50%;
+  border: 2px solid var(--white);
+}
+
+.contentBox:nth-child(even),
+.contentBox:nth-child(even) :is(.title h1, .title p) {
+  background: var(--bg-color);
+  color: #fff;
+}
+
+.contentBox:nth-child(even) h1 {
+  font-weight: 600;
+}
+
+/* .contentBox:nth-child(even), .content:nth-child(even) {
+  grid-template-columns: auto 300px;
+} */
+
+.contentBox:nth-child(even) .body {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+
+@media only screen and (max-width: 768px) {
+  
+  .content {
+    display: block;
+    padding: 48px;
+    margin-bottom: 10px;
+    line-height: 3rem;
+  }
+
+  .title {
+    font-weight: 500;
+    display: flex;
+    flex-flow: wrap-reverse;
+    width: auto;
+  }
+
+  .image, .circle {
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 250px;
+    height: 100%;
+    /* padding: 50px; */
+  }
+
+
+}
+
+
+
+
+
+.quote {
+  /* margin: 0; */
+  /* background: #eee; */
+  padding: 3rem;
+  line-height: normal;
+  letter-spacing: normal;
+  font-style: italic;
+}
+.quote figcaption,
+.quote blockquote {
+  margin: 1em;
+}
+
+.figcaption {
+  font-style: normal;
+  text-align: right;
+}
+
+.content:last-child {
+  margin-bottom: 0;
+}

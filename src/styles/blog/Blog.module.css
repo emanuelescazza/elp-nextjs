@@ -1,0 +1,25 @@
+#blog {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+}
+
+#articlesBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  /* align-content: space-between; */
+  /* justify-content: center; */
+  /* border: 1px solid blue; */
+  padding: 50px;
+}
+
+#articlesBox > * {
+  margin-bottom: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  #articlesBox {
+    padding: 0px;
+  }
+}

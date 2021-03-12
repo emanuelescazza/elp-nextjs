@@ -1,0 +1,63 @@
+#menuLinks {
+  float: right;
+  list-style-type: none;
+}
+
+#menuLinks li {
+  float: left;
+  font-family: var(--head-font-family);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#menuLinks li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 20px 20px;
+  color: #100;
+  transition: color 0.06s;
+  line-height: var(--nav-height);
+  
+  transition-property: color;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+}
+
+#menuLinks li a:active, .active {
+  color: var(--main-color);
+}
+
+#menuLinks li a:hover {
+  color: var(--main-color);
+}
+
+/* ICONS */
+
+.icon {
+  font-size: 26px;
+  padding: 20px 14px;
+}
+
+#fb {
+  color: #3B5998;
+}
+
+#linkedin {
+  color: #007bb5;
+}
+
+#fb:hover, #linkedin:hover {
+  color: var(--main-color);
+}
+
+@media only screen and (max-width: 768px) {
+  .icon {
+    padding: 0;
+  }
+  
+  #menuLinks, #menuLinks li {
+    float: none;
+  }
+  
+}

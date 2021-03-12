@@ -1,0 +1,38 @@
+#sidebar {
+  padding-top: 100px;
+  /* margin: 0 auto; */
+}
+
+#sidebar ul {
+  list-style-type: none;
+}
+
+#sidebar ul li {
+  font-size: 16px;
+  margin: 16px auto;
+}
+
+#sidebar a::first-letter {
+  text-transform: capitalize;
+}
+
+#sidebar a {
+  display: inline-block;
+  color: var(--black);
+}
+
+#sidebar a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  border-bottom: 2px solid var(--main-color);
+  transition: width 0.15s linear;
+}
+
+#sidebar a:hover {
+  color: var(--main-color);
+}
+
+#sidebar a:hover::after {
+  width: 120%;
+}

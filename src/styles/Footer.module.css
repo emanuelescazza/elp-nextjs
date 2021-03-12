@@ -1,0 +1,18 @@
+#footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  font-family: var(--head-font-family);
+  line-height: var(--footer-height);
+  font-size: 12px;
+  letter-spacing: 0.11rem;
+  
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-height);
+}
+
+#footer span {
+  color: var(--main-color);
+}
