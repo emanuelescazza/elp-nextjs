@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
-import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons"; // import the icons you need
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import styles from '../../styles/navbar/Menu.module.css'
 
 
 export default function Menu({ showSocial = true, toggleHambHandler }) {
-  let menuHandler = toggleHambHandler ? () => toggleHambHandler(false) : () => { };
+  const menuHandler = toggleHambHandler ? () => toggleHambHandler(false) : () => { };
   return (
     <ul id={styles.menuLinks}>
       <li>

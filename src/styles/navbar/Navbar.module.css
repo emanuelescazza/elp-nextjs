@@ -1,96 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
-
 #nav {
   background-color: #fff;
   overflow: hidden;
   z-index: 100;
-  line-height: 19px;
-  padding: 4px 40px;
+  /* min-height: var(--nav-height); */
+  line-height: 18.75px;
+  padding: 4px 150px;
   position: sticky;
   top: 0;
   -webkit-box-shadow: inset 0px -1px 5px -1px rgba(204,204,204,0.61);
   -moz-box-shadow: inset 0px -1px 5px -1px rgba(204,204,204,0.61);
   box-shadow: inset 0px -1px 5px -1px rgba(204,204,204,0.61);
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+
 }
 
-.center {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-}
-
-
-#logo{
-  float: left;
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-
-#logo :is(a, a:visited) {
-  text-decoration: none;
-  color: var(--main-color);
-  cursor: pointer;
-}
-
-#logo a, #logoDown {
-  transition-property: color;
-  transition-duration: 0.10s;
-  transition-timing-function: linear;
-}
-
-#logoUp {
-  color: crimson;
-  font-family: 'Caveat', cursive;
-  font-size: 48px;
-  text-align: center;
-}
-
-#hr {
-  visibility: hidden;
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, #fff, crimson, #fff);
-  margin: 7px;
-}
-
-#logoDown {
-  color: #333;
-  font-family: var(--head-font-family);
-  font-size: 18px;
-  text-align: center;
-  text-transform: capitalize;
-}
-
-#logo:hover #logoDown {
-  color: var(--main-color);
-}
-
-#logoImg {
-  display: none;
-  /* transform: scaleX(-1); */
-  margin-right: 8px;
-  width: 32px;
-  height: 32px;
-}
 
 
 @media only screen and (max-width: 768px) {
   #nav {
-    padding: 0;
-    height: calc(var(--nav-height) * 2);
+    padding: 4px 24px;
   }
-  
-  #logo {
-    margin: 8px;
-    float: none;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
 }

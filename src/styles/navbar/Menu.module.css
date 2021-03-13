@@ -1,6 +1,6 @@
 #menuLinks {
-  float: right;
   list-style-type: none;
+  margin: auto 0;
 }
 
 #menuLinks li {
@@ -8,17 +8,16 @@
   font-family: var(--head-font-family);
   font-size: 18px;
   font-weight: 600;
+  padding-left: 24px;
+  height: var(--nav-height);
 }
 
 #menuLinks li a {
-  display: block;
+  line-height: var(--nav-height);
   text-align: center;
   text-decoration: none;
-  padding: 20px 20px;
-  color: #100;
+  color: var(--black);
   transition: color 0.06s;
-  line-height: var(--nav-height);
-  
   transition-property: color;
   transition-duration: 0.15s;
   transition-timing-function: linear;
@@ -36,7 +35,7 @@
 
 .icon {
   font-size: 26px;
-  padding: 20px 14px;
+  padding-left: 16px;
 }
 
 #fb {
@@ -54,6 +53,10 @@
 @media only screen and (max-width: 768px) {
   .icon {
     padding: 0;
+  }
+
+  #menuLinks {
+    text-align: center;
   }
   
   #menuLinks, #menuLinks li {
