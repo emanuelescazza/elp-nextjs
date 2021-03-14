@@ -18,17 +18,18 @@
 }
 
 .title {
-  width: 30rem;
+  /* width: 30rem; */
   /* text-align: left; */
 }
 
 .title h1{
   padding-bottom: 2.4rem;
   font-family: var(--head-font-family);
-  font-size: var(--ml);
-  font-weight: 900;
+  font-size: var(--m);
+  font-weight: 700;
   color: var(--bg-color);
   text-align: left;
+  line-height: 2.2rem;
 }
 
 .title p {

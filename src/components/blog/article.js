@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import { useState } from 'react';
 import styles from '../../styles/blog/Article.module.css';
 
 const breakpoint = 768;
 
-export default function Article({ title, topic, date, imgSrc }) {
+export default function Article({ title, topic, date, imgSrc, slug }) {
   const [isHovered, setHover] = useState(false);
   const cardStyle = [styles.article];
   if (isHovered)
@@ -18,7 +19,10 @@ export default function Article({ title, topic, date, imgSrc }) {
       <div className={styles.contentBox}>
         <h2 className={[styles.title, styles.truncate].join(' ')}
           onMouseOver={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}>{title}
+          onMouseLeave={() => setHover(false)}>
+          <Link href={`/blog/${slug}`}>
+            {title}
+          </Link>
         </h2>
         {/* <p className={styles.content}>{description}</p> */}
         <div className={styles.info}>

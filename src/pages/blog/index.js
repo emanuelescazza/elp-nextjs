@@ -10,6 +10,7 @@ export default function Blog({ categories, articles }) {
           return (
             <Article
               key={article._id}
+              slug={article.slug}
               title={article.title}
               description={article.description2}
               topic={article.category.name}
@@ -28,7 +29,7 @@ export default function Blog({ categories, articles }) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
   let categories, articles;
   try {
     const res = await fetch(`http://localhost:1337/categories`);
