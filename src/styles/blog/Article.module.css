@@ -31,7 +31,7 @@
 
 .info {
   opacity: .8;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .info a, .title {
@@ -43,7 +43,8 @@
 }
 
 .title {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   font-family: var(--head-font-family);
   letter-spacing: .02em;
@@ -89,7 +90,16 @@
 
 @media only screen and (max-width: 768px) {
   .article {
-    width: 480px;
-    /* height: 180px; */
+    width: 360px;
+    height: 120px;
+  }
+
+  .contentBox {
+    padding: 12px;
+  }
+
+  .down {
+    display: block;
+    float: none;
   }
 }

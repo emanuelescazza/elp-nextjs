@@ -19,7 +19,12 @@
 
 @media only screen and (max-width: 768px) {
   
+  #blog {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
   #articlesBox {
-    padding: 0px;
+    padding: 12px 0px;
   }
 }

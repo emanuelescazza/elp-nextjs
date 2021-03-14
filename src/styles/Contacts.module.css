@@ -80,4 +80,14 @@
     justify-content: center;
     margin-bottom: 32px;
   }
+
+
+
+  .content :is(p, span) {
+    font-size: 14px;
+  }
+
+  .contatti div h1 {
+    font-size: 18px;
+  }
 }
