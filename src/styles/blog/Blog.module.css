@@ -1,16 +1,16 @@
 #blog {
   display: grid;
-  grid-template-columns: 1fr 150px;
+  grid-template-columns: 1fr 15rem;
 }
 
 #articlesBox {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; 
+  justify-content: space-between;
   /* align-content: space-between; */
   /* justify-content: center; */
   /* border: 1px solid blue; */
-  padding: 50px;
+  padding: 5rem;
 }
 
 #articlesBox > * {

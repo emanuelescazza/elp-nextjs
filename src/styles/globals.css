@@ -10,8 +10,8 @@
   --white: #fff;
   --black: #333;
   --gray: #7D8994;
-  --footer-height: 50px;
-  --nav-height: 70px;
+  --footer-height: 8rem;
+  --nav-height: 7rem;
 }
 
 * {

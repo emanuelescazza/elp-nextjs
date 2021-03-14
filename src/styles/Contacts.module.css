@@ -1,22 +1,22 @@
 #contattiBox {
-  margin-bottom: 100px;
+  margin-bottom: 10rem;
 }
 
 .contattiHead {
   font-size: var(--xl);
   text-align: center;
   color: var(--main-color);
-  padding: 50px 0;
-  margin-bottom: 30px;
+  padding: 5rem 0;
+  margin-bottom: 3rem;
 }
 
 .contatti {
   display: grid;
-  grid-template-columns: repeat(2, 400px);
+  grid-template-columns: repeat(2, 40rem);
   justify-content: space-evenly;
-  column-gap: 50px;
-  row-gap: 70px;
-  max-width: 900px;
+  column-gap: 5rem;
+  row-gap: 7rem;
+  max-width: 90rem;
   margin: auto;
 }
 
@@ -28,9 +28,9 @@
 
 .element {
   display: grid;
-  grid-template-columns: 100px 200px;
+  grid-template-columns: 10rem 20rem;
   align-items: center;
-  column-gap: 40px;
+  column-gap: 4rem;
 }
 
 .content {
@@ -38,26 +38,26 @@
 }
 
 .content p {
-  padding-bottom: 12px;
+  padding-bottom: 1.2rem;
 }
 
 .contactIcon {
   font-size: var(--xxl);
   margin: auto;
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
   color: var(--main-color);
   transition: transform 0.3s;
 }
 
 .contatti div:hover .contactIcon {
-  transform: translateY(-20px);
+  transform: translateY(-2rem);
 }
 
 .contatti div h1 {
   padding: auto 0;
   font-family: var(--head-font-family);
   font-size: var(--ml);
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -78,7 +78,7 @@
   .contatti {
     grid-template: auto / auto;
     justify-content: center;
-    margin-bottom: 32px;
+    margin-bottom: 3.2rem;
   }
 
   .contattiHead {

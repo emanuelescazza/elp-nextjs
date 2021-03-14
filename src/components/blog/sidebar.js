@@ -11,6 +11,9 @@ export default function Sidebar({ categories }) {
               <a href="#">{category.name}</a>
             </li>)
         })}
+        <li>
+          <a href="#">Tutte le categorie</a>
+        </li>
       </ul>
     </div>
   );

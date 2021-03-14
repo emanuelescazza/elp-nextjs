@@ -1,7 +1,7 @@
 .article {
   background-color: var(--white);
-  width: 600px;
-  height: 150px;
+  width: 60rem;
+  height: 15rem;
   /* border-right: 1px solid var(--bg-color); */
 
   margin: auto;
@@ -11,7 +11,7 @@
   /* border: 2px solid hsla(0, 0%, 90%, 0.8); */
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: 0.3s;
-  border-radius: 2px;
+  border-radius: 0.2rem;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -23,15 +23,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px;
+  padding: 2.4rem;
   width: 100%;
   height: 100%;
 
 }
 
 .info {
-  opacity: .8;
-  font-size: 10px;
+  opacity: .7;
+  font-size: var(--xxs);
 }
 
 .info a, .title {
@@ -42,8 +42,13 @@
   float: right;
 }
 
+.down {
+  display: block;
+  float: none;
+}
+
 .title {
-  font-size: var(--s);
+  font-size: var(--sm);
   font-weight: 600;
   cursor: pointer;
   font-family: var(--head-font-family);
@@ -90,16 +95,12 @@
 
 @media only screen and (max-width: 768px) {
   .article {
-    width: 360px;
-    height: 120px;
+    /* width: 360px;
+    height: 120px; */
+    max-width: 50rem;
   }
 
   .contentBox {
-    padding: 12px;
-  }
-
-  .down {
-    display: block;
-    float: none;
+    /* padding: 12px; */
   }
 }
