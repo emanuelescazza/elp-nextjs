@@ -17,14 +17,14 @@
 #logoUp {
   color: crimson;
   font-family: 'Caveat', cursive;
-  font-size: 48px;
+  font-size: var(--xxl);
   text-align: center;
 }
 
 #logoDown {
   color: #333;
   font-family: var(--head-font-family);
-  font-size: 16px;
+  font-size: var(--s);
   font-weight: 600;
   text-align: center;
 

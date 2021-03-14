@@ -3,11 +3,11 @@
 }
 
 .contattiHead {
-  font-size: 36px;
+  font-size: var(--xl);
   text-align: center;
   color: var(--main-color);
   padding: 50px 0;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 
 .contatti {
@@ -42,7 +42,7 @@
 }
 
 .contactIcon {
-  font-size: 48px;
+  font-size: var(--xxl);
   margin: auto;
   margin-bottom: 12px;
   color: var(--main-color);
@@ -56,13 +56,13 @@
 .contatti div h1 {
   padding: auto 0;
   font-family: var(--head-font-family);
-  font-size: 24px;
+  font-size: var(--ml);
   margin-bottom: 10px;
   text-align: center;
 }
 
 .content :is(p, span) {
-  font-size: 16px;
+  font-size: var(--s);
 }
 .contatti :is(a, a:visited) {
   text-decoration: none;
@@ -81,13 +81,15 @@
     margin-bottom: 32px;
   }
 
-
+  .contattiHead {
+    font-size: var(--l);
+  }
 
   .content :is(p, span) {
-    font-size: 14px;
+    font-size: var(--xs);
   }
 
   .contatti div h1 {
-    font-size: 18px;
+    font-size: var(--sm);
   }
 }

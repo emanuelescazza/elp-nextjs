@@ -4,7 +4,7 @@
 }
 
 #categories {
-  font-size: 18px;
+  font-size: var(--sm);
   opacity: .7;
   padding-bottom: 8px;
   font-family: var(--head-font-family);
@@ -15,7 +15,7 @@
 }
 
 #sidebar ul li {
-  font-size: 16px;
+  font-size: var(--s);
   margin: 16px auto;
 }
 

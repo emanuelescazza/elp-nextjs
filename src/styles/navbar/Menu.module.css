@@ -6,7 +6,7 @@
 #menuLinks li {
   float: left;
   font-family: var(--head-font-family);
-  font-size: 18px;
+  font-size: var(--sm);
   font-weight: 600;
   padding-left: 24px;
   height: var(--nav-height);
@@ -34,7 +34,7 @@
 /* ICONS */
 
 .icon {
-  font-size: 26px;
+  font-size: var(--ml);
   padding-left: 16px;
 }
 

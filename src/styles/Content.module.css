@@ -2,7 +2,7 @@
   padding: 70px 0;
   margin: 0 auto;
   max-width: 900px;
-  font-size: 20px;
+  font-size: var(--sm);
   line-height: 3.3rem;
   letter-spacing: 0.1rem;
   font-weight: 200;
@@ -19,12 +19,13 @@
 
 .title {
   width: 300px;
+  /* text-align: left; */
 }
 
 .title h1{
   padding-bottom: 24px;
   font-family: var(--head-font-family);
-  font-size: 28px;
+  font-size: var(--ml);
   font-weight: 900;
   color: var(--bg-color);
   text-align: left;
@@ -34,7 +35,7 @@
 .title p {
   color: var(--black);
   font-family: var(--main-font-family);
-  font-size: 42px;
+  font-size: var(--xl);
   font-weight: 200;
   margin-bottom: 12px;
   /* line-height: 3.3rem; */
@@ -78,7 +79,7 @@
     display: block;
     padding: 48px;
     margin-bottom: 10px;
-    line-height: 3rem;
+    /* line-height: 3rem; */
   }
 
   .title {
@@ -98,10 +99,6 @@
 
 
 }
-
-
-
-
 
 .quote {
   /* margin: 0; */

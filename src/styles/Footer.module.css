@@ -4,7 +4,7 @@
   text-align: center;
   font-family: var(--head-font-family);
   line-height: var(--footer-height);
-  font-size: 12px;
+  font-size: var(--xxs);
   letter-spacing: 0.11rem;
   
   position: absolute;
