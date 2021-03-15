@@ -2,13 +2,32 @@
   max-width: 130rem;
   background-color: var(--white);
   margin: 0 auto;
-  padding:  0 2.4rem;
+  /* padding:  0 2rem; */
 }
 
 .img {
   width: 100%; 
   height: 30rem; 
   object-fit: cover;
+}
+
+.info {
+  margin: 0 auto;
+  max-width: 90rem;
+  padding-bottom: 3.4rem;
+  font-family: var(--head-font-family);
+  font-size: var(--xs);
+  opacity: .7;
+  letter-spacing: 0.05rem;
+}
+
+.info a {
+  transition: all 100ms linear;
+}
+
+.info a:hover {
+  color: var(--main-color);
+  opacity: 1;
 }
 
 @media only screen and (max-width: 768px) {

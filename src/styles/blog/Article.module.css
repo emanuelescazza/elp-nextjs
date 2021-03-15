@@ -3,7 +3,7 @@
   width: 60rem;
   height: 15rem;
   
-  margin: auto;
+  /* margin: 0 0; */
   overflow-y: hidden;
 
   display: flex;
@@ -101,5 +101,6 @@
     /* width: 360px;
     height: 120px; */
     max-width: 50rem;
+    margin: 0 auto;
   }
 }
