@@ -1,16 +1,15 @@
-import useSWR from 'swr';
 import Sidebar from "../../components/blog/sidebar";
 import Article from '../../components/blog/article';
 import fetchApi from '../../lib/fetchApis';
 import styles from '../../styles/blog/Blog.module.css';
 
-export default function Blog({ categories, articles }) {
-  const { data, error } = useSWR('http://localhost:1337/articles', fetch);
+const limit = 4;
 
+export default function Blog({ categories, articles, count }) {
   return (
     <div id={styles.blog}>
       <div id={styles.articlesBox}>
-        {data.map(article => {
+        {articles.map(article => {
           return (
             <Article
               key={article._id}
@@ -25,19 +24,28 @@ export default function Blog({ categories, articles }) {
         })}
       </div>
       <Sidebar categories={categories} />
+      {(count > limit) && <div className={styles.pagination}>Count: {count}</div>}
     </div>
   )
 }
 
 export async function getServerSideProps({ query: { category, page } }) {
-  const limit = 4;
-  let categories, articles;
+  let categories, articles, count;
   try {
+    // fetch categories
     categories = await fetchApi('categories');
-    const params = { _limit: limit };
-    if (category) params['category_name'] = category;
-    if (page) params['_start'] = parseInt(page) * limit;
-    articles = await fetchApi('articles', params);
+
+    // fetch articles
+    const articleParams = { _limit: limit };
+    if (category) articleParams['category_name'] = category;
+    if (page) articleParams['_start'] = parseInt(page) * limit;
+    articles = await fetchApi('articles', articleParams);
+
+    // fetch count
+    const countParams = {};
+    if (category) countParams['category_name'] = category;
+    count = await fetchApi('articles/count', countParams);
+
   } catch {
     console.log('Error loading posts');
   }
@@ -49,6 +57,6 @@ export async function getServerSideProps({ query: { category, page } }) {
   }
 
   return {
-    props: { categories, articles },
+    props: { categories, articles, count },
   }
 }
