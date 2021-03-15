@@ -8,11 +8,11 @@ export default function Sidebar({ categories }) {
         {categories.map(category => {
           return (
             <li key={category._id}>
-              <a href="#">{category.name}</a>
+              <a href={`/blog?category=${category.slug}`}>{category.name}</a>
             </li>)
         })}
         <li>
-          <a href="#">Tutte le categorie</a>
+          <a href="/blog">Tutte le categorie</a>
         </li>
       </ul>
     </div>

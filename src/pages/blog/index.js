@@ -1,27 +1,27 @@
-import styles from '../../styles/blog/Blog.module.css';
+import useSWR from 'swr';
 import Sidebar from "../../components/blog/sidebar";
 import Article from '../../components/blog/article';
+import fetchApi from '../../lib/fetchApis';
+import styles from '../../styles/blog/Blog.module.css';
 
 export default function Blog({ categories, articles }) {
+  const { data, error } = useSWR('http://localhost:1337/articles', fetch);
+
   return (
     <div id={styles.blog}>
       <div id={styles.articlesBox}>
-        {articles.map(article => {
+        {data.map(article => {
           return (
             <Article
               key={article._id}
               slug={article.slug}
               title={article.title}
               description={article.description2}
-              topic={article.category.name}
+              category={article.category}
               date={article.publishedAt}
               imgSrc={article.image?.formats?.small?.url}
             />
           )
-        })}
-        {articles.map(article => {
-          return <Article key={article._id} title={article.title} description={article.description2}
-            topic={article.category.name} date={article.publishedAt} />
         })}
       </div>
       <Sidebar categories={categories} />
@@ -29,13 +29,15 @@ export default function Blog({ categories, articles }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps({ query: { category, page } }) {
+  const limit = 4;
   let categories, articles;
   try {
-    const res = await fetch(`http://localhost:1337/categories`);
-    categories = await res.json();
-    const res_articles = await fetch(`http://localhost:1337/articles?_limit=5`);
-    articles = await res_articles.json();
+    categories = await fetchApi('categories');
+    const params = { _limit: limit };
+    if (category) params['category_name'] = category;
+    if (page) params['_start'] = parseInt(page) * limit;
+    articles = await fetchApi('articles', params);
   } catch {
     console.log('Error loading posts');
   }
@@ -47,6 +49,6 @@ export async function getStaticProps() {
   }
 
   return {
-    props: { categories: categories, articles: articles }, // will be passed to the page component as props
+    props: { categories, articles },
   }
 }

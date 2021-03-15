@@ -2,8 +2,7 @@
   background-color: var(--white);
   width: 60rem;
   height: 15rem;
-  /* border-right: 1px solid var(--bg-color); */
-
+  
   margin: auto;
   overflow-y: hidden;
 
@@ -36,6 +35,10 @@
 
 .info a, .title {
   transition: color 100ms linear;
+}
+
+.topic:hover {
+  color: var(--main-color);
 }
 
 .right {

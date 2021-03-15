@@ -4,7 +4,7 @@ import styles from '../../styles/blog/Article.module.css';
 
 const breakpoint = 768;
 
-export default function Article({ title, topic, date, imgSrc, slug }) {
+export default function Article({ title, category, date, imgSrc, slug }) {
   const [isHovered, setHover] = useState(false);
   const cardStyle = [styles.article];
   if (isHovered)
@@ -34,7 +34,7 @@ export default function Article({ title, topic, date, imgSrc, slug }) {
             }).format(new Date(date))}
             &nbsp; &nbsp; &#8226; &nbsp;&nbsp;
           </span>
-          <span>{topic}</span>
+          <span className={styles.topic}><Link href={`/blog?category=${category.slug}`}>{category.name}</Link></span>
           <span className={(imgSrc) ? styles.down : styles.right}>Non ci sono commenti</span>
         </div>
       </div>
