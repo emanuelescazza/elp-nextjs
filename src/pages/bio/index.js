@@ -1,3 +1,4 @@
+import Layout from '../../components/layout';
 import Content from '../../components/content';
 
 export default function Bio() {
@@ -7,7 +8,7 @@ export default function Bio() {
   repellat architecto in odio. Pariatur eaque, nesciunt illum totam similique laborum ratione saepe nihil
   odio eveniet necessitatibus! Id totam libero fugit ipsa nemo dolor sapiente distinctio iste beatae?`;
   return (
-    <div>
+    <Layout pageTitle={'elp! - Bio'} description={'Conosci il team elp!'}>
       <Content title={{ up: 'Alessia Pompamea', down: 'Psicologa, Psicoterapeuta in formazione' }}
         body={body}
         img={{ path: 'bananas.jpg', isCircle: true }}
@@ -18,6 +19,6 @@ export default function Bio() {
         img={{ path: 'kiwi.jpg', isCircle: true }}
         isSplitted
       />
-    </div>
+    </Layout>
   )
 }

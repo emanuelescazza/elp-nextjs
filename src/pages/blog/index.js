@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import ReactPaginate from 'react-paginate';
 import { useViewport } from '../../hooks/viewport';
+import Layout from '../../components/layout';
 import Sidebar from "../../components/blog/sidebar";
 import Article from '../../components/blog/article';
 import fetchApi from '../../lib/fetchApis';
@@ -16,42 +17,44 @@ export default function Blog({ categories, articles, count }) {
   const { width } = useViewport();
   const isMobile = width < breakpoint;
   return (
-    <div id={styles.blog}>
-      <div id={styles.articlesBox}>
-        {articles.map(article => {
-          return (
-            <Article
-              article={article}
-              key={article._id}
-              slug={article.slug}
-              title={article.title}
-              description={article.description}
-              category={article.category}
-              date={article.publishedAt}
-              imgSrc={article.image?.formats?.small?.url}
-            />
-          )
-        })}
+    <Layout pageTitle={'elp! - Blog'} description={'Leggi i post pubblicati nella sezione Blog'}>
+      <div id={styles.blog}>
+        <div id={styles.articlesBox}>
+          {articles.map(article => {
+            return (
+              <Article
+                article={article}
+                key={article._id}
+                slug={article.slug}
+                title={article.title}
+                description={article.description}
+                category={article.category}
+                date={article.publishedAt}
+                imgSrc={article.image?.formats?.small?.url}
+              />
+            )
+          })}
+        </div>
+        <Sidebar categories={categories} />
+        {(count > limit) &&
+          <ReactPaginate
+            pageCount={Math.ceil(count / limit)}
+            previousLabel={<FontAwesomeIcon icon={faAngleLeft} />}
+            nextLabel={<FontAwesomeIcon icon={faAngleRight} />}
+            breakLabel={'...'}
+            breakClassName={styles.break}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            containerClassName={styles.pagination}
+            subContainerClassName={styles.subPagination}
+            activeClassName={styles.paginationActive}
+            onPageChange={e => {
+              return e.selected !== 0 ? router.push(`/blog?page=${e.selected}`) : router.push('/blog');
+            }}
+          // hrefBuilder={hb => `/blog?page=${hb}`}
+          />}
       </div>
-      <Sidebar categories={categories} />
-      {(count > limit) &&
-        <ReactPaginate
-          pageCount={Math.ceil(count / limit)}
-          previousLabel={<FontAwesomeIcon icon={faAngleLeft} />}
-          nextLabel={<FontAwesomeIcon icon={faAngleRight} />}
-          breakLabel={'...'}
-          breakClassName={styles.break}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={5}
-          containerClassName={styles.pagination}
-          subContainerClassName={styles.subPagination}
-          activeClassName={styles.paginationActive}
-          onPageChange={e => {
-            return e.selected !== 0 ? router.push(`/blog?page=${e.selected}`) : router.push('/blog');
-          }}
-        // hrefBuilder={hb => `/blog?page=${hb}`}
-        />}
-    </div>
+    </Layout>
   )
 }
 

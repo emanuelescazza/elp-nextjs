@@ -29,10 +29,10 @@ export default function Content({ title, body, img, isSplitted = false }) {
           </div>
         </div>
         <div className={styles.body}>
-          <p>
-            {/* {body} */}
-            <ReactMarkdown className={styles.md} source={body} />
-          </p>
+          {/* <p> */}
+          {/* {body} */}
+          <ReactMarkdown className={styles.md} source={body} />
+          {/* </p> */}
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
-import styles from '../styles/Home.module.css'
+import Layout from '../components/layout';
 import Content from "../components/content";
 import Contacts from '../components/contacts';
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const title = {
@@ -17,12 +18,12 @@ export default function Home() {
   repellat architecto in odio. Pariatur eaque, nesciunt illum totam similique laborum ratione saepe nihil
   odio eveniet necessitatibus!`;
   return (
-    <div>
+    <Layout pageTitle={'elp! - Home'} description={title.up}>
       <main>
         <Content title={title} body={body} />
         <Content title={title} body={body} />
         <Contacts />
       </main>
-    </div>
+    </Layout>
   )
 }

@@ -1,7 +1,10 @@
+import Layout from '../../components/layout';
 import Contacts from "../../components/contacts";
 
 export default function Contatti() {
   return (
-    <Contacts />
+    <Layout pageTitle={'elp! - Contatti'} description={'Hai un problema o un suggerimento? Contattaci'}>
+      <Contacts />
+    </Layout>
   )
 }

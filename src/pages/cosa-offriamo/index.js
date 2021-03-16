@@ -1,3 +1,4 @@
+import Layout from '../../components/layout';
 import Content from '../../components/content';
 
 export default function CosaOffriamo() {
@@ -15,9 +16,9 @@ export default function CosaOffriamo() {
   repellat architecto in odio. Pariatur eaque, nesciunt illum totam similique laborum ratione saepe nihil
   odio eveniet necessitatibus!`;
   return (
-    <div>
+    <Layout pageTitle={'elp! - Cosa offriamo'} description={title.up}>
       <Content title={title} body={body} />
       <Content title={title} body={body} />
-    </div>
+    </Layout>
   )
 }
