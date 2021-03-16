@@ -1,7 +1,8 @@
 import Layout from '../../components/layout';
 import Content from '../../components/content';
+import fetchApi from '../../lib/fetchApis';
 
-export default function Bio() {
+export default function Bio({ writers }) {
   const body = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a rem, quo expedita eveniet tempora harum
   quas ab eum repudiandae alias est corporis praesentium eaque ipsam. Eos qui unde aspernatur blanditiis
   neque doloremque nam quidem culpa vero reiciendis, earum eum voluptas corporis repellendus dicta quos,
@@ -9,7 +10,16 @@ export default function Bio() {
   odio eveniet necessitatibus! Id totam libero fugit ipsa nemo dolor sapiente distinctio iste beatae?`;
   return (
     <Layout pageTitle={'elp! - Bio'} description={'Conosci il team elp!'}>
-      <Content title={{ up: 'Alessia Pompamea', down: 'Psicologa, Psicoterapeuta in formazione' }}
+
+      {writers.map(writer => {
+        return <Content title={{ up: writer.name, down: writer.titolo }}
+          body={writer.bio}
+          img={writer.picture}
+          isSplitted
+        />
+      })}
+
+      {/* <Content title={{ up: 'Alessia Pompamea', down: 'Psicologa, Psicoterapeuta in formazione' }}
         body={body}
         img={{ path: 'bananas.jpg', isCircle: true }}
         isSplitted
@@ -18,7 +28,27 @@ export default function Bio() {
         body={body}
         img={{ path: 'kiwi.jpg', isCircle: true }}
         isSplitted
-      />
+      /> */}
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  let writers;
+  try {
+    // fetch writers
+    writers = await fetchApi('writers');
+  } catch {
+    console.log('Error loading writers');
+  }
+
+  if (!writers) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { writers }
+  }
 }

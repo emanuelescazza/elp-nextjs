@@ -3,9 +3,14 @@ import ReactMarkdown from "react-markdown";
 import styles from '../styles/Content.module.css';
 
 export default function Content({ title, body, img, isSplitted = false }) {
-  const path = img?.path;
-  const imgStyle = img?.isCircle ? `${styles.image} ${styles.circle}` : styles.image;
   const contentStyle = !isSplitted ? `${styles.content} ${styles.noSplit}` : styles.content;
+  const [srcLarge, srcMedium, srcSmall, srcThumbnail] =
+    [
+      img?.formats?.large?.url,
+      img?.formats?.medium?.url,
+      img?.formats?.small?.url,
+      img?.formats?.thumbnail?.url,
+    ]
   return (
     <div className={styles.contentBox}>
       <div className={contentStyle}>
@@ -16,23 +21,20 @@ export default function Content({ title, body, img, isSplitted = false }) {
               {title.down}
             </h1>
           </div>
-          <div className={imgStyle} id={styles.imgBox}>
+          <div id={styles.imgBox}>
             {img &&
-              <Image
-                className={imgStyle}
-                src={`/${path}`}
-                alt={`${path}`}
-                width={500}
-                height={500}
-                layout={'responsive'}
-              />}
+              <img
+                src={srcLarge}
+                className={styles.circle}
+                alt={''}
+                loading={'lazy'}
+                srcSet={`${srcLarge} 1170w, ${srcMedium} 1024w, ${srcThumbnail} 300w, ${srcSmall} 768w`}
+                sizes={'(max-width: 1020px) 100vw, 1020px'}
+              ></img>}
           </div>
         </div>
         <div className={styles.body}>
-          {/* <p> */}
-          {/* {body} */}
           <ReactMarkdown className={styles.md} source={body} />
-          {/* </p> */}
         </div>
       </div>
     </div>
