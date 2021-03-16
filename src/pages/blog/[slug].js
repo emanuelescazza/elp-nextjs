@@ -11,19 +11,12 @@ export default function BlogPost({ post }) {
 }
 
 export async function getStaticPaths() {
-  // const res = await fetch('http://localhost:1337/articles/slugs');
-  // const posts = await res.json();
   const posts = await fetchApi('articles/slugs');
-
   const paths = posts.map((slug) => `/blog/${slug}`);
-
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  // const res = await fetch(`http://localhost:1337/articles/${params.slug}`);
-  // const post = await res.json();
   const post = await fetchApi(`articles/${params.slug}`)
-
   return { props: { post } }
 }

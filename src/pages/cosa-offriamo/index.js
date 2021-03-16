@@ -1,24 +1,31 @@
 import Layout from '../../components/layout';
 import Content from '../../components/content';
+import fetchApi from '../../lib/fetchApis';
 
-export default function CosaOffriamo() {
-  const title = {
-    up: 'Come, quando, perchè',
-    down: 'Cosa Offriamo'
-  };
-  const body = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a rem, quo expedita eveniet tempora harum
-  quas ab eum repudiandae alias est corporis praesentium eaque ipsam. Eos qui unde aspernatur blanditiis
-  neque doloremque nam quidem culpa vero reiciendis, earum eum voluptas corporis repellendus dicta quos,
-  repellat architecto in odio. Pariatur eaque, nesciunt illum totam similique laborum ratione saepe nihil
-  odio eveniet necessitatibus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a rem, quo expedita eveniet tempora harum
-  quas ab eum repudiandae alias est corporis praesentium eaque ipsam. Eos qui unde aspernatur blanditiis
-  neque doloremque nam quidem culpa vero reiciendis, earum eum voluptas corporis repellendus dicta quos,
-  repellat architecto in odio. Pariatur eaque, nesciunt illum totam similique laborum ratione saepe nihil
-  odio eveniet necessitatibus!`;
+export default function CosaOffriamo({ pageContent }) {
   return (
-    <Layout pageTitle={'elp! - Cosa offriamo'} description={title.up}>
-      <Content title={title} body={body} />
-      <Content title={title} body={body} />
+    <Layout pageTitle={'elp! - Cosa offriamo'} description={'Scopri i servizi offerti da elp!'}>
+      {pageContent?.sezioni?.map(section => <Content key={section._id} title={{ up: section.titolo, down: section.sottotitolo }} body={section.contenuto} />)}
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  let pageContent;
+  try {
+    // fetch content
+    pageContent = await fetchApi('cosa-offriamo');
+  } catch {
+    console.log('Error loading content on cosa offriamo');
+  }
+
+  if (!pageContent) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { pageContent }
+  }
 }

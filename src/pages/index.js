@@ -1,29 +1,43 @@
 import Layout from '../components/layout';
 import Content from "../components/content";
 import Contacts from '../components/contacts';
-import styles from '../styles/Home.module.css'
+import fetchApi from '../lib/fetchApis';
+import styles from '../styles/Home.module.css';
 
-export default function Home() {
-  const title = {
-    up: 'Conosciamo i diversi tipi di terapia',
-    down: 'Info utili'
-  };
-  const body = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a rem, quo expedita eveniet tempora harum
-  quas ab eum repudiandae alias est corporis praesentium eaque ipsam. Eos qui unde aspernatur blanditiis
-  neque doloremque nam quidem culpa vero reiciendis, earum eum voluptas corporis repellendus dicta quos,
-  repellat architecto in odio. Pariatur eaque, nesciunt illum totam similique laborum ratione saepe nihil
-  odio eveniet necessitatibus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a rem, quo expedita eveniet tempora harum
-  quas ab eum repudiandae alias est corporis praesentium eaque ipsam. Eos qui unde aspernatur blanditiis
-  neque doloremque nam quidem culpa vero reiciendis, earum eum voluptas corporis repellendus dicta quos,
-  repellat architecto in odio. Pariatur eaque, nesciunt illum totam similique laborum ratione saepe nihil
-  odio eveniet necessitatibus!`;
+export default function Home({ writers, facebook, homepage }) {
   return (
-    <Layout pageTitle={'elp! - Home'} description={title.up}>
+    <Layout pageTitle={'elp! - Home'} description={'Empatia Linguaggio Pragmatica'}>
       <main>
-        <Content title={title} body={body} />
-        <Content title={title} body={body} />
-        <Contacts />
+        {homepage?.sezioni?.map(section => <Content key={section._id} title={{ up: section.titolo, down: section.sottotitolo }} body={section.contenuto} />)}
+        <Contacts writers={writers} contattoFacebook={facebook} />
       </main>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  let writers, facebook;
+  let homepage;
+  try {
+    // fetch writers
+    writers = await fetchApi('writers');
+
+    // fetch facebook
+    facebook = await fetchApi('pagina-facebook');
+
+    // fetch homepage
+    homepage = await fetchApi('homepage');
+  } catch {
+    console.log('Error loading content on homepage');
+  }
+
+  if (!writers || !facebook || !homepage) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { writers, facebook, homepage }
+  }
 }

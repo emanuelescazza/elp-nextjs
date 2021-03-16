@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 export default function Layout({ children, pageTitle, description, ...props }) {
   const router = useRouter();
   const path = `${process.env.BASE_ULR}${router.asPath}`;
-  console.log(path);
   return (
     <>
       <Head>
