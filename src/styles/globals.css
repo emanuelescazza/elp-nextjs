@@ -56,6 +56,13 @@ a {
   background-color: whitesmoke;
 }
 
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 9px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   html {
     font-size: 8px;

@@ -8,7 +8,7 @@
   font-weight: 200;
   text-align: justify;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 300px auto;
   column-gap: 8rem;
   font-family: var(--main-font-family);
 } 
@@ -63,9 +63,9 @@
   font-weight: 600;
 }
 
-/* .contentBox:nth-child(even), .content:nth-child(even) {
+.contentBox:nth-child(even) .content {
   grid-template-columns: auto 300px;
-} */
+}
 
 .contentBox:nth-child(even) .body {
   grid-row: 1 / 2;
@@ -101,8 +101,8 @@
   .title {
     font-weight: 500;
     display: flex;
-    flex-flow: wrap-reverse;
     width: auto;
+    flex-direction: column-reverse;
   }
 
   .image, .circle {
@@ -113,6 +113,9 @@
     /* padding: 50px; */
   }
 
+  #imgBox {
+    width: 100%;
+  }
 
 }
 
