@@ -37,7 +37,7 @@
   font-family: var(--main-font-family);
   font-size: var(--xl);
   font-weight: 200;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.2rem;
   /* line-height: 3.3rem; */
   letter-spacing: 0.03rem;
 }
@@ -71,6 +71,22 @@
   grid-row: 1 / 2;
   grid-column: 1 / 2;
 }
+
+.body {
+  white-space: pre-wrap;
+}
+
+/* .md h1 {
+  color: red;
+}
+
+.md h2 {
+  color: blue;
+}
+
+.md strong {
+  color: green;
+} */
 
 
 @media only screen and (max-width: 1024px) {

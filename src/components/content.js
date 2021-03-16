@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ReactMarkdown from "react-markdown";
 import styles from '../styles/Content.module.css';
 
 export default function Content({ title, body, img, isSplitted = false }) {
@@ -29,7 +30,8 @@ export default function Content({ title, body, img, isSplitted = false }) {
         </div>
         <div className={styles.body}>
           <p>
-            {body}
+            {/* {body} */}
+            <ReactMarkdown className={styles.md} source={body} />
           </p>
         </div>
       </div>
