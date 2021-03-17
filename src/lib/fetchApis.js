@@ -1,4 +1,4 @@
-export default async function fetchAPI(route, params) {
+export async function fetchApi(route, params) {
   const BASE_URL = process.env.BASE_URL || 'http://localhost:1337';
   let path = `${BASE_URL}/${route}`;
   if (params) {
@@ -11,3 +11,5 @@ export default async function fetchAPI(route, params) {
   const res = await fetch(path);
   return res.json();
 }
+
+export const limit = 10;

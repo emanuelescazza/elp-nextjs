@@ -1,59 +1,19 @@
 import { useRouter } from 'next/router';
-import ReactPaginate from 'react-paginate';
-import { useViewport } from '../../hooks/viewport';
 import Layout from '../../components/layout';
-import Sidebar from "../../components/blog/sidebar";
-import Article from '../../components/blog/article';
-import fetchApi from '../../lib/fetchApis';
+import { fetchApi } from '../../lib/fetchApis';
+import Page from '../../components/blog/page';
 import styles from '../../styles/blog/Blog.module.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-
-const limit = 10;
-const breakpoint = 768;
 
 export default function Blog({ categories, articles, count }) {
   const router = useRouter();
-  const { width } = useViewport();
-  const isMobile = width < breakpoint;
+  const pagination = {
+    current: 0,
+    numPages: 1
+  };
+  const handleRoute = (selection) => { router.push(`/blog/category/`) }
   return (
     <Layout pageTitle={'elp! - Blog'} description={'Leggi i post pubblicati nella sezione Blog'}>
-      <div id={styles.blog}>
-        <div id={styles.articlesBox}>
-          {articles.map(article => {
-            return (
-              <Article
-                article={article}
-                key={article._id}
-                slug={article.slug}
-                title={article.title}
-                description={article.description}
-                category={article.category}
-                date={article.publishedAt}
-                imgSrc={article.image?.formats?.small?.url}
-              />
-            )
-          })}
-        </div>
-        <Sidebar categories={categories} />
-        {(count > limit) &&
-          <ReactPaginate
-            pageCount={Math.ceil(count / limit)}
-            previousLabel={<FontAwesomeIcon icon={faAngleLeft} />}
-            nextLabel={<FontAwesomeIcon icon={faAngleRight} />}
-            breakLabel={'...'}
-            breakClassName={styles.break}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            containerClassName={styles.pagination}
-            subContainerClassName={styles.subPagination}
-            activeClassName={styles.paginationActive}
-            onPageChange={e => {
-              return e.selected !== 0 ? router.push(`/blog?page=${e.selected}`) : router.push('/blog');
-            }}
-          // hrefBuilder={hb => `/blog?page=${hb}`}
-          />}
-      </div>
+      <Page articles={articles} categories={categories} count={count} />
     </Layout>
   )
 }

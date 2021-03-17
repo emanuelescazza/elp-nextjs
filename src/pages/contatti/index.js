@@ -1,6 +1,6 @@
 import Layout from '../../components/layout';
 import Contacts from "../../components/contacts";
-import fetchApi from '../../lib/fetchApis';
+import { fetchApi } from '../../lib/fetchApis';
 
 export default function Contatti({ writers, facebook }) {
   return (

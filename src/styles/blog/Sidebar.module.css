@@ -38,11 +38,11 @@
   transition: width 0.15s linear;
 }
 
-#sidebar a:hover {
+#sidebar a:hover, #sidebar .active {
   color: var(--main-color);
 }
 
-#sidebar a:hover::after {
+#sidebar a:hover::after, #sidebar .active::after {
   width: 100%;
 }
 

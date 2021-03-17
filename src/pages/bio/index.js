@@ -1,6 +1,6 @@
 import Layout from '../../components/layout';
 import Content from '../../components/content';
-import fetchApi from '../../lib/fetchApis';
+import { fetchApi } from '../../lib/fetchApis';
 
 export default function Bio({ writers }) {
   return (

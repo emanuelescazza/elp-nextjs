@@ -1,14 +1,16 @@
 .content {
   padding: 7rem 0;
   margin: 0 auto;
-  max-width: 90rem;
+  /* max-width: 90rem; */
+  max-width: 70ch;
+  /* width: 70ch; */
   font-size: var(--sm);
   line-height: 3.3rem;
   letter-spacing: 0.1rem;
   font-weight: 200;
-  text-align: justify;
+  /* text-align: justify; */
   display: grid;
-  grid-template-columns: 300px auto;
+  grid-template-columns: 20rem auto;
   column-gap: 8rem;
   font-family: var(--main-font-family);
 } 
@@ -17,19 +19,14 @@
   display: block;
 }
 
-.title {
-  /* width: 30rem; */
-  /* text-align: left; */
-}
-
 .title h1{
-  padding-bottom: 2.4rem;
+  padding-bottom: 3rem;
   font-family: var(--head-font-family);
   font-size: var(--m);
   font-weight: 700;
   color: var(--bg-color);
   text-align: left;
-  line-height: 2.2rem;
+  line-height: 2rem;
 }
 
 .title p {
@@ -37,18 +34,15 @@
   font-family: var(--main-font-family);
   font-size: var(--xl);
   font-weight: 200;
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.5rem;
   /* line-height: 3.3rem; */
   letter-spacing: 0.03rem;
 }
 
 .circle {
-  /* margin: 0 auto; */
-  /* max-width: 40rem;
-  height: auto; */
   border-radius:50%;
-  width: 35rem;
-  height: 35rem;
+  width: 30rem;
+  height: 30rem;
   object-fit:cover;
   border: 0.2rem solid var(--white);
 }
@@ -64,7 +58,7 @@
 }
 
 .contentBox:nth-child(even) .content {
-  grid-template-columns: auto 300px;
+  grid-template-columns: auto 20rem;
 }
 
 .contentBox:nth-child(even) .body {
@@ -74,6 +68,11 @@
 
 .body {
   white-space: pre-wrap;
+}
+
+/* .contentBox :is(.title h1, .title p), */
+ .body {
+  max-width: 70ch;
 }
 
 /* .md h1 {

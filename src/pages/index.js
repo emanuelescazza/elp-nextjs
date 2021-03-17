@@ -1,7 +1,7 @@
 import Layout from '../components/layout';
 import Content from "../components/content";
 import Contacts from '../components/contacts';
-import fetchApi from '../lib/fetchApis';
+import { fetchApi } from '../lib/fetchApis';
 import styles from '../styles/Home.module.css';
 
 export default function Home({ writers, facebook, homepage }) {

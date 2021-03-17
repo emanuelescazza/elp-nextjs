@@ -25,10 +25,11 @@ export default function Contacts({ writers, contattoFacebook }) {
             <h1>Telefono</h1>
           </div>
           <div className={styles.content}>
-            {writers.map(writer => (<>
-              <span key={writer._id}><strong>{writer.name}</strong></span>
-              <p>+39 {writer.telefono}</p>
-            </>
+            {writers.map(writer => (
+              <div key={writer._id}>
+                <span><strong>{writer.name}</strong></span>
+                <p>+39 {writer.telefono}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -39,11 +40,9 @@ export default function Contacts({ writers, contattoFacebook }) {
           </div>
           <div className={styles.content}>
             {writers.map(writer => (
-              <>
-                <a href={writer.linkedin} key={writer._id}>
-                  <p>{writer.name}</p>
-                </a>
-              </>
+              <a href={writer.linkedin} key={writer._id}>
+                <p>{writer.name}</p>
+              </a>
             ))}
           </div>
         </div>
@@ -54,11 +53,9 @@ export default function Contacts({ writers, contattoFacebook }) {
           </div>
           <div className={styles.content}>
             {writers.map(writer => (
-              <>
-                <p key={writer._id}>
-                  <a href={`mailto:${writer.email}?subject=Richiesta%20informazioni`}>{writer.email}</a>
-                </p>
-              </>
+              <p key={writer._id}>
+                <a href={`mailto:${writer.email}?subject=Richiesta%20informazioni`}>{writer.email}</a>
+              </p>
             ))}
           </div>
         </div>

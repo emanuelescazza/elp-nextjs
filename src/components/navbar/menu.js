@@ -24,7 +24,7 @@ export default function Menu({ showSocial = true, toggleHambHandler }) {
         </Link>
       </li>
       <li>
-        <Link href="/blog">
+        <Link href="/blog/category/latest/1">
           <a onClick={menuHandler}>Blog</a>
         </Link>
       </li>

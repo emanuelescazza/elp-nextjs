@@ -1,6 +1,6 @@
 import Layout from '../../components/layout';
 import Post from '../../components/blog/post';
-import fetchApi from '../../lib/fetchApis';
+import { fetchApi } from '../../lib/fetchApis';
 
 export default function BlogPost({ post }) {
   return (
