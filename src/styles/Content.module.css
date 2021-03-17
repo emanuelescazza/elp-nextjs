@@ -3,6 +3,7 @@
   margin: 0 auto;
   /* max-width: 90rem; */
   max-width: 70ch;
+  width: 60rem;
   /* width: 70ch; */
   font-size: var(--sm);
   line-height: 3.3rem;
@@ -67,13 +68,11 @@
 }
 
 .body {
+  /* white-space: pre-wrap; */
   white-space: pre-wrap;
-}
-
-/* .contentBox :is(.title h1, .title p), */
- .body {
   max-width: 70ch;
 }
+
 
 /* .md h1 {
   color: red;
@@ -94,6 +93,7 @@
     display: block;
     padding: 4.8rem;
     margin-bottom: 1rem;
+    width: auto;
     /* line-height: 3rem; */
   }
 

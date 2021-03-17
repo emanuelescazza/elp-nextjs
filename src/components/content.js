@@ -34,7 +34,7 @@ export default function Content({ title, body, img, isSplitted = false }) {
           </div>
         </div>
         <div className={styles.body}>
-          <ReactMarkdown className={styles.md} source={addNewLines(body)} allowDangerousHtml={true} />
+          <ReactMarkdown className={styles.md} source={addNewLines(body)} />
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@ export default function Content({ title, body, img, isSplitted = false }) {
 
 const addNewLines = (str) => {
   try {
-    return str.split('\n').map(l => l.replace('\\', '<br />')).join('\n');
+    return str.split('\n').map(l => l.trim()).join('\n');
   } catch {
     return str;
   }
