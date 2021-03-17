@@ -20,13 +20,13 @@
 }
 
 .title h1{
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
   font-family: var(--head-font-family);
   font-size: var(--m);
   font-weight: 700;
   color: var(--bg-color);
   text-align: left;
-  line-height: 2rem;
+  line-height: 2.6rem;
 }
 
 .title p {
@@ -35,7 +35,7 @@
   font-size: var(--xl);
   font-weight: 200;
   margin-bottom: 1.5rem;
-  /* line-height: 3.3rem; */
+  line-height: 3.8rem;
   letter-spacing: 0.03rem;
 }
 

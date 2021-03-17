@@ -10,6 +10,7 @@ export default function Bio({ writers }) {
           body={writer.bio}
           img={writer.picture}
           isSplitted
+          key={writer._id}
         />
       })}
     </Layout>

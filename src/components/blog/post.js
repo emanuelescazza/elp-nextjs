@@ -13,15 +13,17 @@ export default function Post({ post }) {
   return (
     <div id={styles.post}>
       {post.image && <img
-        src={srcLarge}
+        src={post.image?.url}
         className={styles.img}
         alt={''}
         loading={'lazy'}
         srcSet={`${srcLarge} 1024w,
-                  ${srcLarge} 1170w,
-                  ${srcThumbnail} 300w,
-                  ${srcSmall} 768w`}
-        sizes="(max-width: 1020px) 100vw, 1020px"></img>}
+                  ${post.image?.url} 1170w,
+                  ${srcSmall} 300w,
+                  ${srcMedium} 768w`}
+        sizes="(max-width: 1020px) 100vw, 1020px"
+      ></img>
+      }
       <div className={styles.contentBox}>
 
         <div>
@@ -42,8 +44,8 @@ export default function Post({ post }) {
             year: "numeric",
             month: "long",
             day: "2-digit"
-          }).format(new Date(post.publishedAt))}</strong></span>
-          <span>&nbsp;nella categoria
+          }).format(new Date(post.publishedAt))}</strong>&nbsp;</span>
+          <span className={styles.mobileDown}>nella categoria
           <Link href={`/blog?category=${post.category.slug}`}>
               <a>
                 <strong>{` ${post.category.name} `}</strong>

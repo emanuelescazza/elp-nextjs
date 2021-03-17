@@ -24,20 +24,28 @@ export default function Content({ title, body, img, isSplitted = false }) {
           <div id={styles.imgBox}>
             {img &&
               <img
-                src={srcLarge}
+                src={img?.url}
                 className={styles.circle}
                 alt={''}
                 loading={'lazy'}
-                srcSet={`${srcLarge} 1170w, ${srcMedium} 1024w, ${srcThumbnail} 300w, ${srcSmall} 768w`}
+                srcSet={`${img?.url} 1170w, ${srcLarge} 1024w, ${srcSmall} 300w, ${srcMedium} 768w`}
                 sizes={'(max-width: 1020px) 100vw, 1020px'}
               ></img>}
           </div>
         </div>
         <div className={styles.body}>
-          <ReactMarkdown className={styles.md} source={body} />
+          <ReactMarkdown className={styles.md} source={addNewLines(body)} allowDangerousHtml={true} />
         </div>
       </div>
     </div>
 
   );
+}
+
+const addNewLines = (str) => {
+  try {
+    return str.split('\n').map(l => l.replace('\\', '<br />')).join('\n');
+  } catch {
+    return str;
+  }
 }
