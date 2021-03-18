@@ -9,7 +9,6 @@ export default function Bio({ writers }) {
         return <Content title={{ up: writer.name, down: writer.titolo }}
           body={writer.bio}
           img={writer.picture}
-          isSplitted
           key={writer._id}
         />
       })}

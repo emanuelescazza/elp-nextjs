@@ -1,9 +1,10 @@
-import Image from 'next/image';
 import ReactMarkdown from "react-markdown";
 import styles from '../styles/Content.module.css';
 
-export default function Content({ title, body, img, isSplitted = false }) {
-  const contentStyle = !isSplitted ? `${styles.content} ${styles.noSplit}` : styles.content;
+const breakpoint = 768;
+
+export default function Content({ title, body, img }) {
+  const contentStyle = (img) ? `${styles.content} ${styles.split}` : styles.content;
   const [srcLarge, srcMedium, srcSmall, srcThumbnail] =
     [
       img?.formats?.large?.url,
