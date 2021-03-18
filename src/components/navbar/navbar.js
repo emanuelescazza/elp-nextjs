@@ -10,7 +10,7 @@ const breakpoint = 1024;
 export default function Navbar() {
   const [showNavLinks, toggleNavLinks] = useState(false);
   const { width } = useViewport();
-  const isMobile = width < breakpoint;
+  const isMobile = width <= breakpoint;
   return (
     <nav id={styles.nav}>
       <Logo toggleHambHandler={toggleNavLinks} />
