@@ -17,6 +17,7 @@ export async function postApi(route, body) {
   let path = `${BASE_URL}/${route}`;
   const res = await fetch(path, {
     method: "POST",
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json'
     },

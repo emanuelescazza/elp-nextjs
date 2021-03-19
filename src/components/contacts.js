@@ -17,11 +17,13 @@ export default function Contacts({ writers, options }) {
         if (result === 'OK') {
           window.alert('Messaggio inviato correttamente!');
         } else {
+          console.log(result);
           window.alert('Qualcosa è andato storto... Si prega di riprovare in un secondo momento.');
         }
         setIsSending(false);
       })
       .catch(err => {
+        console.log(err);
         window.alert('Qualcosa è andato storto... Si prega di riprovare più tardi.');
         setIsSending(false);
       })
