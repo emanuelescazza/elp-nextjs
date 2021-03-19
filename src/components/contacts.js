@@ -32,9 +32,9 @@ export default function Contacts({ writers, options }) {
     <div id={styles.contattiBox}>
       <h1 className={styles.title}>Contatti</h1>
       <div className={styles.contatti}>
-        {writers.map(({ _id, name, telefono, email, facebook, linkedin }) => {
+        {writers.map(({ _id, name, titolo, telefono, email, facebook, linkedin }) => {
           return (<div key={_id} className={styles.writer}>
-            <h3 className={styles.name}>{name}</h3>
+            <h3 className={styles.name}>{titolo ? `${titolo} ${name}` : name}</h3>
             <div className={styles.content}>
               {telefono && <div><FontAwesomeIcon className={styles.icon} icon={faPhone} /><span>+39 {telefono}</span></div>}
               {email && <div><a href={`mailto:${email}?subject=Richiesta%20informazioni`}><FontAwesomeIcon className={styles.icon} icon={faEnvelope} /><span>{email}</span></a></div>}

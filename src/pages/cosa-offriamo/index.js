@@ -5,7 +5,7 @@ import { fetchApi } from '../../lib/fetchApis';
 export default function CosaOffriamo({ pageContent }) {
   return (
     <Layout pageTitle={'elp! - Cosa offriamo'} description={'Scopri i servizi offerti da elp!'}>
-      {pageContent?.sezioni?.map(section => <Content key={section._id} title={{ up: section.titolo, down: section.sottotitolo }} body={section.contenuto} />)}
+      {pageContent?.sezioni?.map(section => <Content key={section._id} title={section.titolo} body={section.contenuto} />)}
     </Layout>
   )
 }

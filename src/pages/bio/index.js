@@ -6,7 +6,7 @@ export default function Bio({ writers }) {
   return (
     <Layout pageTitle={'elp! - Bio'} description={'Conosci il team elp!'}>
       {writers.map(writer => {
-        return <Content title={{ up: writer.name, down: writer.titolo }}
+        return <Content title={writer.titolo ? `${writer.titolo} ${writer.name}` : writer.name}
           body={writer.bio}
           img={writer.picture}
           key={writer._id}

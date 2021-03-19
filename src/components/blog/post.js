@@ -28,7 +28,7 @@ export default function Post({ post }) {
 
         <div>
           <Content
-            title={{ up: post.title, down: post.description }}
+            title={post.title}
             body={post.content}
           />
         </div>
@@ -46,7 +46,7 @@ export default function Post({ post }) {
             day: "2-digit"
           }).format(new Date(post.publishedAt))}</strong>&nbsp;</span>
           <span className={styles.mobileDown}>nella categoria
-          <Link href={`/blog?category=${post.category.slug}`}>
+          <Link href={`/blog/category/${post.category.slug}/1`}>
               <a>
                 <strong>{` ${post.category.name} `}</strong>
               </a>

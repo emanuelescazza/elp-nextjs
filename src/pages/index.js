@@ -8,7 +8,7 @@ export default function Home({ writers, homepage, categories }) {
   return (
     <Layout pageTitle={'elp! - Home'} description={'Empatia Linguaggio Pragmatica'}>
       <main>
-        {homepage?.sezioni?.map(section => <Content key={section._id} title={{ up: section.titolo, down: section.sottotitolo }} body={section.contenuto} />)}
+        {homepage?.sezioni?.map(section => <Content key={section._id} title={section.titolo} body={section.contenuto} />)}
         <Contacts writers={writers} options={categories} />
       </main>
     </Layout>

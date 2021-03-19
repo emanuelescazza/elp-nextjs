@@ -21,6 +21,7 @@
   font-size: var(--xs);
   opacity: .7;
   letter-spacing: 0.05rem;
+  text-align: center;
 }
 
 .info a {

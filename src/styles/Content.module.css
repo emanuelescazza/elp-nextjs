@@ -11,23 +11,14 @@
 }
 
 .title {
-  /* border: 1px solid green; */
-  padding-bottom: 2.5rem;
+  padding-bottom: 3rem;
 }
 
-.title h1{
+.title h1 {
+  /* color: var(--black); */
+  color: var(--main-color);
   font-family: var(--head-font-family);
-  font-size: var(--m);
-  font-weight: 700;
-  color: var(--bg-color);
-  text-align: left;
-  padding-top: 1rem;
-}
-
-.title p {
-  color: var(--black);
-  font-family: var(--head-font-family);
-  font-size: var(--xxl);
+  font-size: var(--xl);
   font-weight: 200;
   line-height: 4rem;
 }
@@ -81,6 +72,16 @@
 .contentBox:nth-child(even) .split .body {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
+}
+
+.md :is(h1, h2, h3, h4, h5, h6) {
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+  font-size: var(--sm);
+}
+
+.md a {
+  color: var(--main-color);
 }
 
 @media only screen and (max-width: 1024px) {

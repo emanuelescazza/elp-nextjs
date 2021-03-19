@@ -4,7 +4,8 @@ import { fetchApi } from '../../lib/fetchApis';
 
 export default function BlogPost({ post }) {
   return (
-    <Layout pageTitle={`elp! - ${post.title}`} description={post.description}>
+    <Layout pageTitle={`elp! - ${post.title}`} description={post.description}
+      article={{ category: post.category.name, author: post.author.name, published: post.publishedAt, modified: post.updatedAt, tags: post.tags }}>
       <Post post={post} />
     </Layout>
   );

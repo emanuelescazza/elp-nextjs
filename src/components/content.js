@@ -1,7 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import styles from '../styles/Content.module.css';
 
-const breakpoint = 768;
 
 export default function Content({ title, body, img }) {
   const contentStyle = (img) ? `${styles.content} ${styles.split}` : styles.content;
@@ -17,10 +16,7 @@ export default function Content({ title, body, img }) {
       <div className={contentStyle}>
         <div className={styles.title}>
           <div id={styles.titleBox}>
-            <p>{title.up}</p>
-            <h1>
-              {title.down}
-            </h1>
+            <h1>{title}</h1>
           </div>
           <div id={styles.imgBox}>
             {img &&
@@ -35,7 +31,7 @@ export default function Content({ title, body, img }) {
           </div>
         </div>
         <div className={styles.body}>
-          <ReactMarkdown className={styles.md} source={addNewLines(body)} />
+          <ReactMarkdown className={styles.md} source={body} />
         </div>
       </div>
     </div>

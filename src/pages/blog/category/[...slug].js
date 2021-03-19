@@ -57,7 +57,6 @@ export async function getStaticProps({ params }) {
   if (currentPage > 1) {
     query['_start'] = (currentPage - 1) * limit;
   }
-  console.log(query);
   const posts = await fetchApi('articles', query);
 
   return { props: { posts, categories, currentCategory, currentPage, totalPages } }
