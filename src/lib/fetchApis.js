@@ -1,5 +1,6 @@
+const BASE_URL = process.env.BASE_URL || 'http://localhost:1337';
+
 export async function fetchApi(route, params) {
-  const BASE_URL = process.env.BASE_URL || 'http://localhost:1337';
   let path = `${BASE_URL}/${route}`;
   if (params) {
     const arrayParams = [];
@@ -9,6 +10,18 @@ export async function fetchApi(route, params) {
     path += `?${arrayParams.join('&')}`;
   }
   const res = await fetch(path);
+  return res.json();
+}
+
+export async function postApi(route, body) {
+  let path = `${BASE_URL}/${route}`;
+  const res = await fetch(path, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
   return res.json();
 }
 

@@ -2,33 +2,32 @@ import Layout from '../../components/layout';
 import Contacts from "../../components/contacts";
 import { fetchApi } from '../../lib/fetchApis';
 
-export default function Contatti({ writers, facebook }) {
+export default function Contatti({ writers, categories }) {
   return (
     <Layout pageTitle={'elp! - Contatti'} description={'Hai un problema o un suggerimento? Contattaci'}>
-      <Contacts writers={writers} contattoFacebook={facebook} />
+      <Contacts writers={writers} options={categories} />
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  let writers, facebook;
+  let writers, categories;
   try {
     // fetch writers
     writers = await fetchApi('writers');
+    categories = await fetchApi('categories');
 
-    // fetch facebook
-    facebook = await fetchApi('pagina-facebook');
   } catch {
     console.log('Error loading writers');
   }
 
-  if (!writers || !facebook) {
+  if (!writers || !categories) {
     return {
       notFound: true,
     }
   }
 
   return {
-    props: { writers, facebook }
+    props: { writers, categories }
   }
 }

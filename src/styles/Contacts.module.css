@@ -51,12 +51,26 @@
   resize: none;
 }
 
-.form .invia {
+.form :is(.invia, .attendi) {
   display: block;
   padding: 1rem 8rem;
   margin-top: 1.2rem;
   margin-left: auto;
   margin-right: auto;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+.form .invia:hover {
+  box-shadow: 0 2px 3px rgba(25, 31, 92, 0.226);
+}
+
+.form .attendi:hover {
+  cursor: default;
 }
 
 .writer {
@@ -108,105 +122,4 @@
     align-items: center;
     --form-width: 45rem;
   }
-
-
 }
-
-/*
-
-#contattiBox {
-  margin-bottom: 10rem;
-}
-
-.contattiHead {
-  font-size: var(--xl);
-  text-align: center;
-  color: var(--main-color);
-  padding: 5rem 0;
-  margin-bottom: 3rem;
-}
-
-.contatti {
-  display: grid;
-  grid-template-columns: repeat(2, 40rem);
-  justify-content: space-evenly;
-  column-gap: 5rem;
-  row-gap: 7rem;
-  max-width: 90rem;
-  margin: auto;
-}
-
-.contatti div {
-  display: grid;
-  grid-template-rows: auto;
-}
-
-.element {
-  display: grid;
-  grid-template-columns: 10rem 20rem;
-  align-items: center;
-  column-gap: 4rem;
-}
-
-.content {
-  justify-self: left;
-}
-
-.content p {
-  padding-bottom: 1.2rem;
-}
-
-.contactIcon {
-  font-size: var(--xxl);
-  margin: auto;
-  margin-bottom: 1.2rem;
-  color: var(--main-color);
-  transition: transform 0.3s;
-}
-
-.contatti div:hover .contactIcon {
-  transform: translateY(-2rem);
-}
-
-.contatti div h1 {
-  padding: auto 0;
-  font-family: var(--head-font-family);
-  font-size: var(--ml);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.content :is(p, span) {
-  font-size: var(--s);
-}
-.contatti :is(a, a:visited) {
-  text-decoration: none;
-  color: #333;
-}
-
-.contatti :is(a:hover) {
-  color: var(--main-color);
-}
-
-
-@media only screen and (max-width: 768px) {
-  .contatti {
-    grid-template: auto / auto;
-    justify-content: center;
-    margin-bottom: 3.2rem;
-  }
-
-  .contattiHead {
-    font-size: var(--l);
-  }
-
-  .content :is(p, span) {
-    font-size: var(--xs);
-  }
-
-  .contatti div h1 {
-    font-size: var(--sm);
-  }
-}
-
-*/

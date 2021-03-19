@@ -4,26 +4,25 @@ import Contacts from '../components/contacts';
 import { fetchApi } from '../lib/fetchApis';
 import styles from '../styles/Home.module.css';
 
-export default function Home({ writers, facebook, homepage }) {
+export default function Home({ writers, homepage, categories }) {
   return (
     <Layout pageTitle={'elp! - Home'} description={'Empatia Linguaggio Pragmatica'}>
       <main>
         {homepage?.sezioni?.map(section => <Content key={section._id} title={{ up: section.titolo, down: section.sottotitolo }} body={section.contenuto} />)}
-        <Contacts writers={writers} contattoFacebook={facebook} />
+        <Contacts writers={writers} options={categories} />
       </main>
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  let writers, facebook;
+  let writers;
+  let categories;
   let homepage;
   try {
     // fetch writers
     writers = await fetchApi('writers');
-
-    // fetch facebook
-    facebook = await fetchApi('pagina-facebook');
+    categories = await fetchApi('categories');
 
     // fetch homepage
     homepage = await fetchApi('homepage');
@@ -31,13 +30,13 @@ export async function getStaticProps() {
     console.log('Error loading content on homepage');
   }
 
-  if (!writers || !facebook || !homepage) {
+  if (!writers || !homepage || !categories) {
     return {
       notFound: true,
     }
   }
 
   return {
-    props: { writers, facebook, homepage }
+    props: { writers, homepage, categories }
   }
 }
