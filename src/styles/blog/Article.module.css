@@ -1,7 +1,9 @@
 .article {
+  --article-width: 60rem;
+  --article-height: 15rem;
   background-color: var(--white);
-  width: 60rem;
-  height: 15rem;
+  width: var(--article-width);
+  height: var(--article-height);
   
   /* margin: 0 0; */
   overflow-y: hidden;
@@ -67,9 +69,11 @@
 }
 
 .img {
-  max-height: 100%;
-  width: auto;
-
+  /* max-height: 100%;
+  width: auto; */
+  width: calc(var(--article-height) * 4 / 3);
+  height: var(--article-height);
+  object-fit:cover;
 }
 
 .truncate {
@@ -88,6 +92,7 @@
     /* width: 360px;
     height: 120px; */
     max-width: 50rem;
+    --article-width: 50rem;
     margin: 0 auto;
   }
 }
