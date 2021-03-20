@@ -1,6 +1,9 @@
 .article {
-  --article-width: 60rem;
-  --article-height: 15rem;
+  --article-height: 14rem;
+  --img-height: var(--article-height);
+  --img-width: calc(var(--img-height) * 4/3);
+  --article-width: calc(var(--img-width) + calc(var(--img-height) * 3));
+
   background-color: var(--white);
   width: var(--article-width);
   height: var(--article-height);
@@ -71,8 +74,8 @@
 .img {
   /* max-height: 100%;
   width: auto; */
-  width: calc(var(--article-height) * 4 / 3);
-  height: var(--article-height);
+  width: var(--img-width);
+  height: var(--img-height);
   object-fit:cover;
 }
 
@@ -92,7 +95,7 @@
     /* width: 360px;
     height: 120px; */
     max-width: 50rem;
-    --article-width: 50rem;
+    --article-height: 13rem;
     margin: 0 auto;
   }
 }
