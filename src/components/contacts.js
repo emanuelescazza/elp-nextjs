@@ -35,6 +35,7 @@ export default function Contacts({ writers, options }) {
         {writers.map(({ _id, name, titolo, telefono, email, facebook, linkedin }) => {
           return (<div key={_id} className={styles.writer}>
             <h3 className={styles.name}>{titolo ? `${titolo} ${name}` : name}</h3>
+            {/* <h3 className={styles.name}>Dr.ssa Alessia Pompamea</h3> */}
             <div className={styles.content}>
               {telefono && <div><FontAwesomeIcon className={styles.icon} icon={faPhone} /><span>+39 {telefono}</span></div>}
               {email && <div><a href={`mailto:${email}?subject=Richiesta%20informazioni`}><FontAwesomeIcon className={styles.icon} icon={faEnvelope} /><span>{email}</span></a></div>}

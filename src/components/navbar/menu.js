@@ -28,7 +28,7 @@ export default function Menu({ showSocial = true, toggleHambHandler }) {
           <a onClick={menuHandler}>Blog</a>
         </Link>
       </li>
-      { showSocial && <>
+      {/* { showSocial && <>
         <li>
           <a href="#" className={styles.icon}>
             <FontAwesomeIcon icon={faLinkedin} id={styles.linkedin}></FontAwesomeIcon>
@@ -39,7 +39,7 @@ export default function Menu({ showSocial = true, toggleHambHandler }) {
             <FontAwesomeIcon icon={faFacebook} id={styles.fb}></FontAwesomeIcon>
           </a>
         </li>
-      </>}
+      </>} */}
 
     </ul>
   )
