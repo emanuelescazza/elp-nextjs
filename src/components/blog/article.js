@@ -34,7 +34,7 @@ export default function Article({ title, category, date, imgSrc, slug }) {
             }).format(new Date(date))}
             &nbsp; &nbsp; &#8226; &nbsp;&nbsp;
           </span>
-          <span className={styles.topic}><Link href={`/blog?category=${category.slug}`}>{category.name}</Link></span>
+          <span className={styles.topic}><Link href={`/blog/category/${category.slug}/1`}>{category.name}</Link></span>
           {/* <span className={styles.right}>Non ci sono commenti</span> */}
         </div>
       </div>
