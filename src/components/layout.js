@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 export default function Layout({ children, pageTitle, description, article, ...props }) {
   const router = useRouter();
-  let hostname = '';
+  console.log(process.env.BASE_URL);
   const path = `${router.asPath}`;
   console.log(path);
   return (

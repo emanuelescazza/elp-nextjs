@@ -1,4 +1,4 @@
-const BASE_URL = process.env.BASE_URL || 'http://localhost:1337';
+const BASE_URL = process.env.CMS_URL || 'http://localhost:1337';
 
 export async function fetchApi(route, params) {
   let path = `${BASE_URL}/${route}`;
