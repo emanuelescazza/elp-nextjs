@@ -10,8 +10,10 @@ export default function Contacts({ writers, options }) {
   const [messaggio, updateMessaggio] = useState('');
   const [isSending, setIsSending] = useState(false);
   const handleForm = (body) => {
-    if (messaggio.trim().length < 1)
-      setIsSending(true);
+    if (messaggio.trim().length < 1) {
+      return window.alert("Inserisci testo del messaggio.");
+    }
+    setIsSending(true);
     postApi('contatti', body)
       .then(({ result }) => {
         if (result === 'OK') {
