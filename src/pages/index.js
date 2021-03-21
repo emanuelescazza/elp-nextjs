@@ -1,6 +1,7 @@
 import Layout from '../components/layout';
 import Content from "../components/content";
 import Contacts from '../components/contacts';
+import Carousel from '../components/carousel';
 import { fetchApi } from '../lib/fetchApis';
 import styles from '../styles/Home.module.css';
 
@@ -9,7 +10,8 @@ export default function Home({ writers, homepage, categories }) {
     <Layout pageTitle={'elp! - Home'} description={'Empatia Linguaggio Pragmatica'}>
       <main>
         {homepage?.sezioni?.map(section => <Content key={section._id} title={section.titolo} body={section.contenuto} />)}
-        <Contacts writers={writers} options={categories} />
+        <Carousel />
+        {/* <Contacts writers={writers} options={categories} /> */}
       </main>
     </Layout>
   )

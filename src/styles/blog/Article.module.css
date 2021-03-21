@@ -94,8 +94,7 @@
   .article {
     /* width: 360px;
     height: 120px; */
-    max-width: 50rem;
-    --article-height: 13rem;
+    max-width: 98vw;
     margin: 0 auto;
 
   }

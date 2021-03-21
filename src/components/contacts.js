@@ -47,7 +47,7 @@ export default function Contacts({ writers, options }) {
           </div>)
         })}
       </div>
-      <div className={styles.formBox}>
+      <div className={styles.formBox} id="parla-con-noi">
         <div className={styles.form}>
           <h1>Parla con noi</h1>
           <select
@@ -73,7 +73,7 @@ export default function Contacts({ writers, options }) {
           {!isSending ?
             <button className={styles.invia} onClick={() => handleForm({ categoria, messaggio })}>Invia</button>
             :
-            <button className={styles.attendi}>Attendere ...</button>
+            <button className={styles.attendi}>Attendi ...</button>
           }
         </div>
       </div>

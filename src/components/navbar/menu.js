@@ -2,10 +2,15 @@ import Link from 'next/link'
 import styles from '../../styles/navbar/Menu.module.css'
 
 
-export default function Menu({ showSocial = true, toggleHambHandler }) {
+export default function Menu({ toggleHambHandler }) {
   const menuHandler = toggleHambHandler ? () => toggleHambHandler(false) : () => { };
   return (
     <ul id={styles.menuLinks}>
+      <li>
+        <Link href="/">
+          <a onClick={menuHandler}>Home</a>
+        </Link>
+      </li>
       <li>
         <Link href="/bio">
           <a onClick={menuHandler}>Chi siamo</a>

@@ -3,39 +3,51 @@
 #logoBox {
   height: var(--nav-height);
   margin: auto 0;
+  display: flex;
+  align-items: center;
 }
 
 #logo{
   height: 100%;
-  float:left;
-  cursor: pointer;
+  /* float:left; */
+  /* cursor: pointer; */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-#logoUp {
+#img {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+#title {
   color: crimson;
   font-family: 'Caveat', cursive;
   font-size: var(--xxl);
   text-align: center;
 }
 
-#logoDown {
+#description {
   color: #333;
   font-family: var(--head-font-family);
   font-size: var(--s);
   font-weight: 600;
   text-align: center;
 
-  transition-property: color;
+  /* padding-left: 4rem; */
+  padding-left: 1rem;
+
+  /* transition-property: color;
   transition-duration: 0.10s;
-  transition-timing-function: linear;
+  transition-timing-function: linear; */
 }
 
-#logo:hover #logoDown {
+/* #logo:hover #description {
   color: var(--main-color);
-}
+} */
 
 @media only screen and (max-width: 768px) {
 

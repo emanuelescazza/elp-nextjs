@@ -4,13 +4,13 @@ import styles from '../../styles/navbar/Logo.module.css';
 export default function Logo({ toggleHambHandler }) {
   return (
     <div id={styles.logoBox}>
-      <Link href="/">
-        <div id={styles.logo} onClick={() => toggleHambHandler(false)}>
-          {/* <img src="clew4.png" alt="gomitolo" id={styles.logoImg} /> */}
-          <p id={styles.logoUp}>elp!</p>
-          <p id={styles.logoDown}>Empatia Linguaggio Pragmatica</p>
-        </div>
-      </Link>
+      {/* <Link href="/"> */}
+      <img id={styles.img} src="/megafono.png" alt="" />
+      <div id={styles.logo} onClick={() => toggleHambHandler(false)}>
+        <p id={styles.title}>elp!</p>
+        <p id={styles.description}>Empatia Linguaggio Pragmatica</p>
+      </div>
+      {/* </Link> */}
     </div>
   );
 }
