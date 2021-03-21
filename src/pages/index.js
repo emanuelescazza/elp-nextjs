@@ -1,30 +1,28 @@
 import Layout from '../components/layout';
 import Content from "../components/content";
-import Contacts from '../components/contacts';
 import Carousel from '../components/carousel';
 import { fetchApi } from '../lib/fetchApis';
 import styles from '../styles/Home.module.css';
 
-export default function Home({ writers, homepage, categories }) {
+export default function Home({ homepage, posts }) {
   return (
     <Layout pageTitle={'elp! - Home'} description={'Empatia Linguaggio Pragmatica'}>
       <main>
-        {homepage?.sezioni?.map(section => <Content key={section._id} title={section.titolo} body={section.contenuto} />)}
-        <Carousel />
-        {/* <Contacts writers={writers} options={categories} /> */}
+        <Carousel articles={posts} />
+        <div>
+          {homepage?.sezioni?.map(section => <Content key={section._id} title={section.titolo} body={section.contenuto} />)}
+        </div>
       </main>
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  let writers;
-  let categories;
   let homepage;
+  let posts;
   try {
-    // fetch writers
-    writers = await fetchApi('writers');
-    categories = await fetchApi('categories');
+    // fetch posts
+    posts = await fetchApi('articles', { _limit: 4 })
 
     // fetch homepage
     homepage = await fetchApi('homepage');
@@ -32,13 +30,13 @@ export async function getStaticProps() {
     console.log('Error loading content on homepage');
   }
 
-  if (!writers || !homepage || !categories) {
+  if (!posts || !homepage) {
     return {
       notFound: true,
     }
   }
 
   return {
-    props: { writers, homepage, categories }
+    props: { posts, homepage }
   }
 }
