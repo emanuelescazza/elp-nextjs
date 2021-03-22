@@ -6,7 +6,7 @@
 #menuLinks li {
   float: left;
   font-family: var(--head-font-family);
-  font-size: var(--sm);
+  font-size: var(--s);
   font-weight: 600;
   padding-left: 24px;
   height: var(--nav-height);

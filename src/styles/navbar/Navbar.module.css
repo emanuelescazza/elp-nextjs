@@ -4,7 +4,7 @@
   z-index: 100;
   /* min-height: var(--nav-height); */
   line-height: 2.8rem;
-  padding: 1.4rem 30rem;
+  padding: 1.4rem 15rem;
   position: sticky;
   top: 0;
   -webkit-box-shadow: inset 0px -1px 5px -1px rgba(204,204,204,0.61);
@@ -16,14 +16,8 @@
 
 }
 
-@media only screen and (max-width: 1300px) {
-  #nav {
-    padding: 1.4rem 6rem;
-  }
-}
 
-
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   #nav {
     padding: 1.4rem 2.5rem;
   }

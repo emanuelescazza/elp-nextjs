@@ -26,14 +26,14 @@
 #title {
   color: crimson;
   font-family: 'Caveat', cursive;
-  font-size: var(--xxl);
+  font-size: var(--xl);
   text-align: center;
 }
 
 #description {
   color: #333;
   font-family: var(--head-font-family);
-  font-size: var(--s);
+  font-size: var(--xs);
   font-weight: 600;
   text-align: center;
 
@@ -51,8 +51,9 @@
 
 @media only screen and (max-width: 768px) {
 
-  #logo {
-    float: none;
+  #logoBox {
+    /* float: none; */
+    margin: 0 auto;
   }
 } 
 
