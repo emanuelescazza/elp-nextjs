@@ -1,6 +1,6 @@
 .banner {
-  --width: 70vw;
-  --height: calc(var(--width) * 7 / 16);
+  --width: 60vw;
+  --height: calc(var(--width) * 9 / 16);
   width: var(--width);
   height: var(--height);
   margin: 0 auto;
@@ -66,5 +66,6 @@
 
   .banner {
     --width: 98vw;
+    --height: calc(var(--width) * 9 / 16);
   }
 }

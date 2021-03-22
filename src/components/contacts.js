@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 import { faFacebookSquare, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"; // import the icons you need
+import Modal from './modal';
 import { postApi } from '../lib/fetchApis';
 import styles from '../styles/Contacts.module.css';
 
@@ -9,25 +10,25 @@ export default function Contacts({ writers, options }) {
   const [categoria, updateCategoria] = useState('altro');
   const [messaggio, updateMessaggio] = useState('');
   const [isSending, setIsSending] = useState(false);
+  const [showModal, setModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
   const handleForm = (body) => {
     if (messaggio.trim().length < 1) {
       return window.alert("Inserisci testo del messaggio.");
     }
     setIsSending(true);
+    setModalMessage('Qualcosa è andato storto... Si prega di riprovare più tardi.');
     postApi('contatti', body)
       .then(({ result }) => {
         if (result === 'OK') {
-          window.alert('Messaggio inviato correttamente!');
-        } else {
-          console.log(result);
-          window.alert('Qualcosa è andato storto... Si prega di riprovare in un secondo momento.');
+          setModalMessage('Il messaggio è stato inviato correttamente.');
         }
+        setModal(true);
         setIsSending(false);
       })
       .catch(err => {
-        console.log(err);
-        window.alert('Qualcosa è andato storto... Si prega di riprovare più tardi.');
         setIsSending(false);
+        setModal(true);
       })
   }
   return (
@@ -77,6 +78,11 @@ export default function Contacts({ writers, options }) {
           }
         </div>
       </div>
+      {showModal && <Modal>
+        <h1>Avviso</h1>
+        <p>{modalMessage}</p>
+        <button className={styles.invia} onClick={() => setModal(false)}>Ok</button>
+      </Modal>}
     </div>
   );
 }

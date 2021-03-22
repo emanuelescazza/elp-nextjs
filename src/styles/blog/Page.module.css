@@ -1,7 +1,7 @@
 #articlesBox {
   display: grid;
   grid-template-columns: auto auto;
-  padding: 5rem;
+  padding: 3rem;
 }
 
 #articlesBox > * {
@@ -10,7 +10,7 @@
 
 #blog {
   display: grid;
-  grid-template-columns: 1fr 15rem;
+  grid-template-columns: 1fr 170px;
   /* padding: 0 10rem; */
 }
 

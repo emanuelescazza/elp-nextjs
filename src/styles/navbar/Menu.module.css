@@ -60,7 +60,26 @@
   }
   
   #menuLinks, #menuLinks li {
-    float: none;
+    font-size: var(--m);
+  }
+
+  #menuLinks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 100;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menuLinks li {
+    margin: 1.5rem auto;
   }
   
 }

@@ -10,7 +10,7 @@
 #logo{
   height: 100%;
   /* float:left; */
-  /* cursor: pointer; */
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -19,8 +19,13 @@
 
 #img {
   display: inline-block;
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+}
+
+.contentBox {
+  display: flex;
 }
 
 #title {
@@ -28,26 +33,27 @@
   font-family: 'Caveat', cursive;
   font-size: var(--xl);
   text-align: center;
+  transform: rotate(-8deg) translateY(15%);
 }
 
 #description {
   color: #333;
   font-family: var(--head-font-family);
-  font-size: var(--xs);
+  font-size: var(--xxs);
   font-weight: 600;
   text-align: center;
 
   /* padding-left: 4rem; */
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
 
-  /* transition-property: color;
+  transition-property: color;
   transition-duration: 0.10s;
-  transition-timing-function: linear; */
+  transition-timing-function: linear;
 }
 
-/* #logo:hover #description {
+#logo:hover #description {
   color: var(--main-color);
-} */
+}
 
 @media only screen and (max-width: 768px) {
 
